@@ -4,6 +4,7 @@ from skimage import transform as tf
 
 from helpers import *
 
+import matplotlib.pyplot as plt
 
 def getFeatures(img,bbox):
     """
@@ -15,7 +16,24 @@ def getFeatures(img,bbox):
         features: Coordinates of all feature points in first frame, (F, N, 2)
     Instruction: Please feel free to use cv2.goodFeaturesToTrack() or cv.cornerHarris()
     """
-    features = None
+    # Set parameters for Shi-Tomasi feature detection
+    maxCorners = 25  # Max number of corners
+    qualityLevel = 0.01  # the minimum quality of corner below which everyone is rejected
+    minDistance = 10  # throws away all the nearby corners in the range of minimum distance
+
+    F = bbox.shape[0]  # number of bounding boxes
+    N = maxCorners
+    features = -np.ones((F, N, 2))
+
+    for i in range(F):
+        x_tl, y_tl, x_br, y_br =  int(bbox[i, 0, 0]), int(bbox[i, 0, 1]), int(bbox[i, 1, 0]), int(bbox[i, 1, 1])
+        img_bbox = img[y_tl:y_br+1, x_tl:x_br+1]
+
+        # Shi-Tomasi feature detection
+        corners = cv2.goodFeaturesToTrack(img_bbox, maxCorners, qualityLevel, minDistance)
+        corners = np.int0(corners)
+        features[i, 0:len(corners), :]
+
     return features
 
 
