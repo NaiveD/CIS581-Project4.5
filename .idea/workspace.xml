@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15b3097a-14df-412f-b71f-5c70c38edc94" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/teki.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/teki.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/optical_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/optical_flow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/109.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/109.jpg" afterDir="false" />
@@ -50,6 +49,11 @@
       <change beforePath="$PROJECT_DIR$/results/49.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/49.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/499.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/499.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/509.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/509.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/519.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/519.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/529.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/529.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/539.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/539.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/549.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/549.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/559.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/559.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/59.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/59.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/69.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/69.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/79.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/79.jpg" afterDir="false" />
@@ -70,11 +74,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+            <state relative-caret-position="502">
+              <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -82,13 +86,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="optical_flow.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="optical_flow.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/optical_flow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="138" column="21" selection-start-line="138" selection-start-column="21" selection-end-line="138" selection-end-column="21" />
+            <state relative-caret-position="296">
+              <caret line="152" column="62" selection-start-line="152" selection-start-column="62" selection-end-line="152" selection-end-column="62" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#1860#2405#0" />
+                <element signature="e#3110#3468#0" />
               </folding>
             </state>
           </provider>
@@ -113,8 +119,9 @@
       <find>getFeat</find>
       <find>gradient</find>
       <find>vis</find>
-      <find>estimateAllTranslation</find>
       <find>estimateFeatureTranslation</find>
+      <find>nan</find>
+      <find>estimateAllTranslation</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -123,8 +130,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/optical_flow.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/optical_flow.py" />
       </list>
     </option>
   </component>
@@ -143,6 +150,11 @@
             <path>
               <item name="CIS581-Proj4.5" type="b2602c69:ProjectViewProjectNode" />
               <item name="CIS581-Proj4.5" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CIS581-Proj4.5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CIS581-Proj4.5" type="462c0819:PsiDirectoryNode" />
+              <item name="results" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -368,6 +380,8 @@
           <caret line="42" column="18" lean-forward="true" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#1860#2405#0" />
+            <element signature="e#3110#3468#0" />
           </folding>
         </state>
       </provider>
@@ -402,15 +416,11 @@
           <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#1860#2405#0" />
+            <element signature="e#3110#3468#0" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/9.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/39.jpg">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.1/python_stubs/1558143108/cv2/cv2/VideoWriter.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -447,22 +457,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/optical_flow.py">
+    <entry file="file://$PROJECT_DIR$/results/9.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/19.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/39.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/119.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/69.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="138" column="21" selection-start-line="138" selection-start-column="21" selection-end-line="138" selection-end-column="21" />
+        <state relative-caret-position="502">
+          <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/optical_flow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+        <state relative-caret-position="296">
+          <caret line="152" column="62" selection-start-line="152" selection-start-column="62" selection-end-line="152" selection-end-column="62" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#1860#2405#0" />
+            <element signature="e#3110#3468#0" />
           </folding>
         </state>
       </provider>

@@ -28,7 +28,7 @@ def objectTracking(rawVideo):
     features = None
     
     # Define how many objects to track
-    F = 2
+    F = 1
     
     while (cap.isOpened()):
         ret, frame = cap.read()
