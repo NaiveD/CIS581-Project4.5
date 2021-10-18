@@ -4,7 +4,6 @@ from skimage import transform as tf
 
 from helpers import *
 
-import matplotlib.pyplot as plt
 import scipy
 
 def getFeatures(img,bbox):
@@ -113,11 +112,30 @@ def applyGeometricTransformation(features, new_features, bbox):
         new_features: Coordinates of all feature points in second frame, (F, N, 2)
         bbox: Top-left and bottom-right corners of all bounding boxes, (F, 2, 2)
     Output:
-        features: Coordinates of all feature points in first frame after eliminating outliers, (F, N1, 2)
+        features: Coordinates of all feature points in second frame after eliminating outliers, (F, N1, 2)
         bbox: Top-left and bottom-right corners of all bounding boxes, (F, 2, 2)
     Instruction: Please feel free to use skimage.transform.estimate_transform()
     """
-    features, bbox = None, None
-    return features, bbox
+
+    tform = tf.estimate_transform('similarity', features[0], new_features[0])
+    print("this is estimate transform ", tform)
+
+    F = bbox.shape[0]  # number of bounding boxes
+    N = new_features.shape[1]
+
+    new_boxs = -np.ones((F, 2, 2))
+    for f in range(F):
+        new_box = tform(bbox[f, :, :])
+        print("This is current box", new_box)
+        """ need to filter out invalid new_feature, according to new box coordiante"""
+        # valid_features = np.where(new_features[f,:,:])
+        # for i in range(N):
+        #     new_feature = new_features[f, i, :]
+        #     if (new_feature[0] > new_box[0][0] and new_feature[0] > new_box[1][0] and new_feature[1] > new_box[0][1]  and new_feature[1] < new_box[1][1]):
+
+        # print("this is current new_feature", new_features[f,:,:])
+        new_boxs[f] = new_box
+
+    return features, new_boxs
 
 

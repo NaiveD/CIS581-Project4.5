@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15b3097a-14df-412f-b71f-5c70c38edc94" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/optical_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/optical_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Output_Easy.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/results/Output_Easy.mp4" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+            <state relative-caret-position="163">
+              <caret line="54" column="36" lean-forward="true" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -31,17 +28,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="optical_flow.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="optical_flow.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/optical_flow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="120" column="25" lean-forward="true" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="25" />
+            <state relative-caret-position="558">
+              <caret line="138" column="29" selection-start-line="138" selection-start-column="29" selection-end-line="138" selection-end-column="29" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#154#1792#0" />
-                <element signature="e#1860#2405#0" />
-                <element signature="e#2665#3341#0" />
-                <element signature="e#3110#3468#0" />
               </folding>
             </state>
           </provider>
@@ -67,6 +60,7 @@
       <find>gradient</find>
       <find>vis</find>
       <find>estimateFeatureTranslation</find>
+      <find>estimateAllTranslation</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -168,11 +162,11 @@
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49908257" visible="true" weight="0.19097957" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.25333333" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.25939393" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.25939393" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32935324" />
-      <window_info anchor="bottom" id="Python Console" order="0" weight="0.27064678" />
+      <window_info anchor="bottom" id="Python Console" order="0" weight="0.27030304" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.20696518" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.2060606" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.33939394" />
       <window_info id="Favorites" order="0" sideWeight="0.50091743" side_tool="true" weight="0.19097957" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -234,7 +228,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="18" />
+      <option name="time" value="19" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -268,10 +262,6 @@
           <caret line="42" column="18" lean-forward="true" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#154#1792#0" />
-            <element signature="e#1860#2405#0" />
-            <element signature="e#2665#3341#0" />
-            <element signature="e#3110#3468#0" />
           </folding>
         </state>
       </provider>
@@ -306,10 +296,6 @@
           <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#154#1792#0" />
-            <element signature="e#1860#2405#0" />
-            <element signature="e#2665#3341#0" />
-            <element signature="e#3110#3468#0" />
           </folding>
         </state>
       </provider>
@@ -355,26 +341,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/optical_flow.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="120" column="25" lean-forward="true" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="25" />
+        <state relative-caret-position="163">
+          <caret line="54" column="36" lean-forward="true" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#154#1792#0" />
-            <element signature="e#1860#2405#0" />
-            <element signature="e#2665#3341#0" />
-            <element signature="e#3110#3468#0" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/optical_flow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+        <state relative-caret-position="558">
+          <caret line="138" column="29" selection-start-line="138" selection-start-column="29" selection-end-line="138" selection-end-column="29" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
