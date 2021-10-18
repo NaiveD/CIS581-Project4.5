@@ -24,6 +24,8 @@ def objectTracking(rawVideo):
     fps = cap.get(cv2.CAP_PROP_FPS)
     size = (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)))
     writer = cv2.VideoWriter(trackVideo, fourcc, fps, size)
+
+    features = None
     
     # Define how many objects to track
     F = 1
@@ -52,14 +54,14 @@ def objectTracking(rawVideo):
             features, bbox = applyGeometricTransformation(features, new_features, bbox)
             frame_old = frame.copy()
             
-        # # display the bbox
-        # for f in range(F):
-        #     cv2.rectangle(vis, tuple(bbox[f,0].astype(np.int32)), tuple(bbox[f,1].astype(np.int32)), (0,0,255), thickness=2)
+        # display the bbox
+        for f in range(F):
+            cv2.rectangle(vis, tuple(bbox[f,0].astype(np.int32)), tuple(bbox[f,1].astype(np.int32)), (0,0,255), thickness=2)
         
-        # # display feature points
-        # for f in range(F):
-        #     for feature in features[f]:
-        #         cv2.circle(vis, tuple(feature.astype(np.int32)), 2, (0,255,0), thickness=-1)
+        # display feature points
+        for f in range(F):
+            for feature in features[f]:
+                cv2.circle(vis, tuple(feature.astype(np.int32)), 2, (0,255,0), thickness=-1)
         
         # save to list
         imgs.append(img_as_ubyte(vis))

@@ -5,6 +5,7 @@ from skimage import transform as tf
 from helpers import *
 
 import matplotlib.pyplot as plt
+import scipy
 
 def getFeatures(img,bbox):
     """
@@ -31,8 +32,13 @@ def getFeatures(img,bbox):
 
         # Shi-Tomasi feature detection
         corners = cv2.goodFeaturesToTrack(img_bbox, maxCorners, qualityLevel, minDistance)
-        corners = np.int0(corners)
-        features[i, 0:len(corners), :]
+        # corners = np.int0(corners)
+
+        # Current feature points coordinates are in bbox image, convert into original image
+        corners[:, 0, 0] += x_tl
+        corners[:, 0, 1] += y_tl
+
+        features[i, 0:len(corners), :] = corners[:, 0]
 
     return features
 
@@ -50,7 +56,14 @@ def estimateFeatureTranslation(feature, Ix, Iy, img1, img2):
         new_feature: Coordinate of feature point in second frame, (2,)
     Instruction: Please feel free to use interp2() and getWinBound() from helpers
     """
-    new_feature = None
+
+    It = img2 - img1
+    A = np.hstack((Ix.reshape(-1, 1), Iy.reshape(-1, 1)))
+    b = -It.reshape(-1, 1)
+    res = np.linalg.solve(A.T @ A, A.T @ b)
+
+    new_feature = feature + res[:, 0]
+
     return new_feature
 
 
@@ -64,8 +77,32 @@ def estimateAllTranslation(features, img1, img2):
     Output:
         new_features: Coordinates of all feature points in second frame, (F, N, 2)
     """
-    new_features = None      
+    Jx, Jy = findGradient(img2, 7, 1.3)
+
+    F = features.shape[0]
+    N = features.shape[1]
+
+    new_features = -np.ones((F, N, 2))
+
+    for f in range(F):
+        for i in range(N):
+            feature = features[f, i, :]
+            new_feature = estimateFeatureTranslation(feature, Jx, Jy, img1, img2)
+            new_features[f, i, :] = new_feature
+
     return new_features
+
+
+def findGradient(img, ksize=5, sigma=1):
+    G = cv2.getGaussianKernel(ksize, sigma)
+    G = G @ G.T
+    fx = np.array([[1, -1]])
+    fy = fx.T
+    Gx = scipy.signal.convolve2d(G, fx, 'same', 'symm')[:, 1:]
+    Gy = scipy.signal.convolve2d(G, fy, 'same', 'symm')[1:, :]
+    Ix = scipy.signal.convolve2d(img, Gx, 'same', 'symm')
+    Iy = scipy.signal.convolve2d(img, Gy, 'same', 'symm')
+    return Ix, Iy
 
 
 def applyGeometricTransformation(features, new_features, bbox):
