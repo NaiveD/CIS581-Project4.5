@@ -117,25 +117,51 @@ def applyGeometricTransformation(features, new_features, bbox):
     Instruction: Please feel free to use skimage.transform.estimate_transform()
     """
 
-    tform = tf.estimate_transform('similarity', features[0], new_features[0])
-    print("this is estimate transform ", tform)
-
     F = bbox.shape[0]  # number of bounding boxes
-    N = new_features.shape[1]
+    N = features.shape[1] # number of feature points
 
-    new_boxs = -np.ones((F, 2, 2))
+    new_boxes = -np.ones((F, 2, 2))
+    sec_features = -np.ones((F, N, 2))
+
     for f in range(F):
+        tform = tf.estimate_transform('similarity', features[f], new_features[f])
+        # print("this is estimate transform ", tform)
+
         new_box = tform(bbox[f, :, :])
-        print("This is current box", new_box)
-        """ need to filter out invalid new_feature, according to new box coordiante"""
+        x_tl, y_tl, x_br, y_br = int(new_box[0, 0]), int(new_box[0, 1]), int(new_box[1, 0]), int(new_box[1, 1])
+        # print("This is current box", new_box)
+
+        sec_feature = tform(features[f, :, :])
+        # print("This is transformed features", sec_features)
+
+        # Eliminating outliers
+        # Need to filter out invalid new_feature, according to new box coordinate
+        threshold = 1
+        for i in range(len(sec_feature)):
+
+            # 1. If a feature point moves too much (how much? you can tune your own distance threshold),
+            # then eliminate this feature because it probably failed in tracking.
+            diff = np.linalg.norm((features - sec_feature)[f][i])
+            if diff > threshold:
+                # print("Distance exceeds threshold.")
+                sec_feature[i][0], sec_feature[i][1] == -1, -1
+
+            # 2. If a feature point is outside of the new calculated bbox, then eliminate this feature.
+            if (sec_feature[i][0] < x_tl) or (sec_feature[i][0] > x_br) or (sec_feature[i][1] < y_tl) or (sec_feature[i][1] > y_br):
+                # print("Out of bound")
+                sec_feature[i][0], sec_feature[i][1] == -1, -1
+
+
         # valid_features = np.where(new_features[f,:,:])
         # for i in range(N):
         #     new_feature = new_features[f, i, :]
         #     if (new_feature[0] > new_box[0][0] and new_feature[0] > new_box[1][0] and new_feature[1] > new_box[0][1]  and new_feature[1] < new_box[1][1]):
 
         # print("this is current new_feature", new_features[f,:,:])
-        new_boxs[f] = new_box
+        new_boxes[f] = new_box
+        sec_features[f] = sec_feature
 
-    return features, new_boxs
+
+    return sec_features, new_boxes
 
 

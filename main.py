@@ -28,7 +28,7 @@ def objectTracking(rawVideo):
     features = None
     
     # Define how many objects to track
-    F = 1
+    F = 2
     
     while (cap.isOpened()):
         ret, frame = cap.read()
@@ -61,7 +61,8 @@ def objectTracking(rawVideo):
         # display feature points
         for f in range(F):
             for feature in features[f]:
-                cv2.circle(vis, tuple(feature.astype(np.int32)), 2, (0,255,0), thickness=-1)
+                if feature[0] != -1:
+                    cv2.circle(vis, tuple(feature.astype(np.int32)), 2, (0,255,0), thickness=-1)
         
         # save to list
         imgs.append(img_as_ubyte(vis))
