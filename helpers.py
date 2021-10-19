@@ -88,3 +88,5 @@ def getWinBound(img_sz, startX, startY, win_size):
 
     return win_left, win_right, win_top, win_bottom
 
+def getValidFeatures(features):
+    return features[features != -1].reshape(-1, 2)

@@ -22,8 +22,10 @@ def getFeatures(img,bbox):
     minDistance = 10  # throws away all the nearby corners in the range of minimum distance
 
     F = bbox.shape[0]  # number of bounding boxes
-    N = maxCorners
-    features = -np.ones((F, N, 2))
+    # N = maxCorners
+    # features = -np.ones((F, N, 2))
+    feature_len = []
+    feature_list = []
 
     for i in range(F):
         x_tl, y_tl, x_br, y_br =  int(bbox[i, 0, 0]), int(bbox[i, 0, 1]), int(bbox[i, 1, 0]), int(bbox[i, 1, 1])
@@ -37,7 +39,14 @@ def getFeatures(img,bbox):
         corners[:, 0, 0] += x_tl
         corners[:, 0, 1] += y_tl
 
-        features[i, 0:len(corners), :] = corners[:, 0]
+        feature_len.append(len(corners))
+        feature_list.append(corners[:, 0])
+        # features[i, 0:len(corners), :] = corners[:, 0]
+
+    N = max(feature_len)
+    features = -np.ones((F, N, 2))
+    for i in range(F):
+        features[i, 0:feature_len[i], :] = feature_list[i]
 
     return features
 
@@ -86,6 +95,8 @@ def estimateAllTranslation(features, img1, img2):
     for f in range(F):
         for i in range(N):
             feature = features[f, i, :]
+            if feature[0] < 0:
+                continue
             new_feature = estimateFeatureTranslation(feature, Jx, Jy, img1, img2)
             new_features[f, i, :] = new_feature
 
@@ -124,14 +135,17 @@ def applyGeometricTransformation(features, new_features, bbox):
     sec_features = -np.ones((F, N, 2))
 
     for f in range(F):
-        tform = tf.estimate_transform('similarity', features[f], new_features[f])
+        # Get valid part of feature points
+        valid_old_features = getValidFeatures(features[f])
+        valid_new_features = getValidFeatures(new_features[f])
+        tform = tf.estimate_transform('similarity', valid_old_features, valid_new_features)
         # print("this is estimate transform ", tform)
 
         new_box = tform(bbox[f, :, :])
         x_tl, y_tl, x_br, y_br = int(new_box[0, 0]), int(new_box[0, 1]), int(new_box[1, 0]), int(new_box[1, 1])
         # print("This is current box", new_box)
 
-        sec_feature = tform(features[f, :, :])
+        sec_feature = tform(valid_old_features)
         # print("This is transformed features", sec_features)
 
         # Eliminating outliers
@@ -141,7 +155,7 @@ def applyGeometricTransformation(features, new_features, bbox):
 
             # 1. If a feature point moves too much (how much? you can tune your own distance threshold),
             # then eliminate this feature because it probably failed in tracking.
-            diff = np.linalg.norm((features - sec_feature)[f][i])
+            diff = np.linalg.norm((valid_old_features - sec_feature)[i])
             if diff > threshold:
                 # print("Distance exceeds threshold.")
                 sec_feature[i][0], sec_feature[i][1] == -1, -1
@@ -151,16 +165,8 @@ def applyGeometricTransformation(features, new_features, bbox):
                 # print("Out of bound")
                 sec_feature[i][0], sec_feature[i][1] == -1, -1
 
-
-        # valid_features = np.where(new_features[f,:,:])
-        # for i in range(N):
-        #     new_feature = new_features[f, i, :]
-        #     if (new_feature[0] > new_box[0][0] and new_feature[0] > new_box[1][0] and new_feature[1] > new_box[0][1]  and new_feature[1] < new_box[1][1]):
-
-        # print("this is current new_feature", new_features[f,:,:])
         new_boxes[f] = new_box
-        sec_features[f] = sec_feature
-
+        sec_features[f, 0:len(sec_feature), :] = sec_feature
 
     return sec_features, new_boxes
 
