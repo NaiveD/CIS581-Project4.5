@@ -150,7 +150,7 @@ def applyGeometricTransformation(features, new_features, bbox):
 
         # Eliminating outliers
         # Need to filter out invalid new_feature, according to new box coordinate
-        threshold = 1
+        threshold = 2.5
         for i in range(len(sec_feature)):
 
             # 1. If a feature point moves too much (how much? you can tune your own distance threshold),
@@ -158,13 +158,15 @@ def applyGeometricTransformation(features, new_features, bbox):
             diff = np.linalg.norm((valid_old_features - sec_feature)[i])
             if diff > threshold:
                 # print("Distance exceeds threshold.")
-                sec_feature[i][0], sec_feature[i][1] == -1, -1
+                sec_feature[i][0], sec_feature[i][1] = -1, -1
 
             # 2. If a feature point is outside of the new calculated bbox, then eliminate this feature.
             if (sec_feature[i][0] < x_tl) or (sec_feature[i][0] > x_br) or (sec_feature[i][1] < y_tl) or (sec_feature[i][1] > y_br):
                 # print("Out of bound")
-                sec_feature[i][0], sec_feature[i][1] == -1, -1
+                sec_feature[i][0], sec_feature[i][1] = -1, -1
 
+        sec_feature = getValidFeatures(sec_feature)
+        # print(len(sec_feature))
         new_boxes[f] = new_box
         sec_features[f, 0:len(sec_feature), :] = sec_feature
 
