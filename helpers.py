@@ -90,3 +90,6 @@ def getWinBound(img_sz, startX, startY, win_size):
 
 def getValidFeatures(features):
     return features[features != -1].reshape(-1, 2)
+
+def select_win(lst, slice1, slice2):
+    return [item[slice1, slice2] for item in lst]

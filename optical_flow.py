@@ -92,7 +92,7 @@ def estimateAllTranslation(features, img1, img2):
     for f in range(F):
         for i in range(N):
             feature = features[f, i, :]
-            win_size = 17
+            win_size = 15
             s = (win_size + 1) // 2
             win_left, win_right, win_top, win_bottom = getWinBound(img1.shape, feature[0] - s, feature[1] - s, win_size)
             win_left, win_right, win_top, win_bottom = int(win_left), int(win_right), int(win_top), int(win_bottom)
@@ -154,7 +154,7 @@ def applyGeometricTransformation(features, new_features, bbox):
 
         # Eliminating outliers
         # Need to filter out invalid new_feature, according to new box coordinate
-        threshold = 2.5
+        threshold = 1
         for i in range(len(sec_feature)):
 
             # 1. If a feature point moves too much (how much? you can tune your own distance threshold),
