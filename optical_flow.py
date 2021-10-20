@@ -149,7 +149,8 @@ def applyGeometricTransformation(features, new_features, bbox):
         x_tl, y_tl, x_br, y_br = int(new_box[0, 0]), int(new_box[0, 1]), int(new_box[1, 0]), int(new_box[1, 1])
         # print("This is current box", new_box)
 
-        sec_feature = tform(valid_old_features)
+        # sec_feature = tform(valid_old_features)
+        sec_feature = valid_new_features
         # print("This is transformed features", sec_features)
 
         # Eliminating outliers
@@ -170,6 +171,8 @@ def applyGeometricTransformation(features, new_features, bbox):
                 sec_feature[i][0], sec_feature[i][1] = -1, -1
 
         sec_feature = getValidFeatures(sec_feature)
+
+
         # print(len(sec_feature))
         new_boxes[f] = new_box
         sec_features[f, 0:len(sec_feature), :] = sec_feature
