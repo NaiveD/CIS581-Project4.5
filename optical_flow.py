@@ -64,7 +64,6 @@ def estimateFeatureTranslation(feature, Ix, Iy, img1, img2):
         new_feature: Coordinate of feature point in second frame, (2,)
     Instruction: Please feel free to use interp2() and getWinBound() from helpers
     """
-
     It = img2 - img1
     A = np.hstack((Ix.reshape(-1, 1), Iy.reshape(-1, 1)))
     b = -It.reshape(-1, 1)
@@ -85,8 +84,6 @@ def estimateAllTranslation(features, img1, img2):
     Output:
         new_features: Coordinates of all feature points in second frame, (F, N, 2)
     """
-    Jx, Jy = findGradient(img2, 7, 1.3)
-
     F = features.shape[0]
     N = features.shape[1]
 
@@ -95,9 +92,16 @@ def estimateAllTranslation(features, img1, img2):
     for f in range(F):
         for i in range(N):
             feature = features[f, i, :]
+            win_size = 17
+            s = (win_size + 1) // 2
+            win_left, win_right, win_top, win_bottom = getWinBound(img1.shape, feature[0] - s, feature[1] - s, win_size)
+            win_left, win_right, win_top, win_bottom = int(win_left), int(win_right), int(win_top), int(win_bottom)
+            img1_win, img2_win = img1[win_top:win_bottom + 1, win_left:win_right + 1], img2[win_top:win_bottom + 1, win_left:win_right + 1]
+            Jx, Jy = findGradient(img2_win, 7, 1.3)
+
             if feature[0] < 0:
                 continue
-            new_feature = estimateFeatureTranslation(feature, Jx, Jy, img1, img2)
+            new_feature = estimateFeatureTranslation(feature, Jx, Jy, img1_win, img2_win)
             new_features[f, i, :] = new_feature
 
     return new_features
