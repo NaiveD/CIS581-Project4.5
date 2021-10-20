@@ -2,7 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15b3097a-14df-412f-b71f-5c70c38edc94" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/optical_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/optical_flow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/109.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/109.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/119.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/119.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/129.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/129.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/139.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/139.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/149.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/149.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/159.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/159.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/169.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/169.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/179.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/179.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/189.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/189.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/19.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/199.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/199.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/209.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/209.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/219.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/219.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/229.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/229.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/239.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/239.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/249.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/249.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/259.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/259.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/29.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/39.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/39.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/49.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/49.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/59.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/59.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/69.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/69.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/79.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/79.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/89.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/89.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/99.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/results/99.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/Output_Easy.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/results/Output_Easy.mp4" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,8 +47,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="66" column="8" lean-forward="true" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+            <state relative-caret-position="87">
+              <caret line="60" column="43" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -31,8 +59,8 @@
       <file leaf-file-name="optical_flow.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/optical_flow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="172" column="40" selection-start-line="172" selection-start-column="40" selection-end-line="172" selection-end-column="40" />
+            <state relative-caret-position="200">
+              <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -43,8 +71,8 @@
       <file leaf-file-name="helpers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helpers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="94" column="49" selection-start-line="94" selection-start-column="49" selection-end-line="94" selection-end-column="49" />
+            <state relative-caret-position="376">
+              <caret line="96" column="37" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -70,8 +98,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/helpers.py" />
+        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/optical_flow.py" />
       </list>
     </option>
@@ -164,11 +192,11 @@
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49908257" visible="true" weight="0.19097957" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.25333333" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="5" weight="0.39636365" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.39636365" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32848486" />
       <window_info anchor="bottom" id="Python Console" order="0" weight="0.27030304" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.2060606" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.2060606" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.33939394" />
       <window_info id="Favorites" order="0" sideWeight="0.50091743" side_tool="true" weight="0.19097957" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -230,6 +258,9 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -237,63 +268,63 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="47" />
+      <option name="time" value="49" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="len(features[f])" language="Python" />
+        <watch expression="res[:, 0][1]" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>len(features[f])</expression-string>
+        <expression-string>res[:, 0][1]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>getValidFeatures(features[f])</expression-string>
+        <expression-string>res[:, 0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>getValidFeatures(feature[f])</expression-string>
+        <expression-string>res[1, 0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>new_box-bbox</expression-string>
+        <expression-string>res[0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.linalg.norm((valid_old_features - sec_feature)[i])</expression-string>
+        <expression-string>res[:, 1]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>(valid_old_features - sec_feature)[i]</expression-string>
+        <expression-string>res[0, 1]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>valid_old_features - sec_feature</expression-string>
+        <expression-string>res[0, 0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>valid_old_features</expression-string>
+        <expression-string>res[:]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>features[f, :, :]</expression-string>
+        <expression-string>res[0,0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>features[f]</expression-string>
+        <expression-string>sec_feature == valid_new_features</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -399,15 +430,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/helpers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="94" column="49" selection-start-line="94" selection-start-column="49" selection-end-line="94" selection-end-column="49" />
+        <state relative-caret-position="376">
+          <caret line="96" column="37" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="66" column="8" lean-forward="true" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+        <state relative-caret-position="87">
+          <caret line="60" column="43" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -416,8 +447,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/optical_flow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="172" column="40" selection-start-line="172" selection-start-column="40" selection-end-line="172" selection-end-column="40" />
+        <state relative-caret-position="200">
+          <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
