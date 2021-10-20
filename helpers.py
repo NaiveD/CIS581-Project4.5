@@ -90,8 +90,3 @@ def getWinBound(img_sz, startX, startY, win_size):
 
 def getValidFeatures(features):
     return features[features != -1].reshape(-1, 2)
-
-def get_new_img(img, dx, dy):
-    x, y = np.meshgrid(np.arange(img.shape[1]), np.arange(img.shape[0]))
-    new_x, new_y = x + dx, y + dy
-    return interp2(img, new_x, new_y)

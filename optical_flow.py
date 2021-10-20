@@ -17,9 +17,9 @@ def getFeatures(img,bbox):
     Instruction: Please feel free to use cv2.goodFeaturesToTrack() or cv.cornerHarris()
     """
     # Set parameters for Shi-Tomasi feature detection
-    maxCorners = 25  # Max number of corners
-    qualityLevel = 0.01  # the minimum quality of corner below which everyone is rejected
-    minDistance = 10  # throws away all the nearby corners in the range of minimum distance
+    maxCorners = 100  # Max number of corners
+    qualityLevel = 0.03  # the minimum quality of corner below which everyone is rejected
+    minDistance = 7  # throws away all the nearby corners in the range of minimum distance
 
     F = bbox.shape[0]  # number of bounding boxes
     # N = maxCorners
@@ -155,7 +155,7 @@ def applyGeometricTransformation(features, new_features, bbox):
 
         # Eliminating outliers
         # Need to filter out invalid new_feature, according to new box coordinate
-        threshold = 1
+        threshold = 2.5
         for i in range(len(sec_feature)):
 
             # 1. If a feature point moves too much (how much? you can tune your own distance threshold),
