@@ -97,7 +97,7 @@ def estimateAllTranslation(features, img1, img2):
             win_left, win_right, win_top, win_bottom = getWinBound(img1.shape, feature[0] - s, feature[1] - s, win_size)
             win_left, win_right, win_top, win_bottom = int(win_left), int(win_right), int(win_top), int(win_bottom)
             img1_win, img2_win = img1[win_top:win_bottom + 1, win_left:win_right + 1], img2[win_top:win_bottom + 1, win_left:win_right + 1]
-            Jx, Jy = findGradient(img2_win, 7, 1.3)
+            Jx, Jy = findGradient(img2_win, 9, 1.3)
 
             if feature[0] < 0:
                 continue
