@@ -53,7 +53,14 @@ def objectTracking(rawVideo):
             new_features = estimateAllTranslation(features, frame_old, frame)
             features, bbox = applyGeometricTransformation(features, new_features, bbox)
             frame_old = frame.copy()
-            
+
+            # Check if there are enough valid feature points
+            for f in range(F):
+                valid_features = getValidFeatures(features[f])
+                # Too few valid feature points, we need to re-detect
+                if (len(valid_features) < 5):
+                    features = getFeatures(frame, bbox)
+
         # display the bbox
         for f in range(F):
             cv2.rectangle(vis, tuple(bbox[f,0].astype(np.int32)), tuple(bbox[f,1].astype(np.int32)), (0,0,255), thickness=2)
